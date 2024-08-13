@@ -1,0 +1,33 @@
+---
+import SimpleParallax from '@/components/SimpleParallax.astro'
+
+const { image } = Astro.props
+---
+
+<SimpleParallax image={image}>
+  <div class='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[90%] max-w-96 bg-accent/80 flex flex-col items-center gap-4 p-4 rounded'>
+    <p class='text-lg' data-aos='fade-up' data-aos-duration='1000'>
+      ¡Sólo faltan!
+    </p>
+    <div class='w-full grid grid-cols-4 justify-stretch' data-aos='fade-up'>
+      <div class='flex flex-col items-center'>
+        <span id='days' class='text-xl' />
+        <span class='text-sm'>Días</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span id='hours' class='text-xl' />
+        <span class='text-sm'>Horas</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span id='minutes' class='text-xl' />
+        <span class='text-sm'>Mins</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span id='seconds' class='text-xl' />
+        <span class='text-sm'>Segs</span>
+      </div>
+    </div>
+  </div>
+</SimpleParallax>
+
+<script src="@/utils/countdown"></script>

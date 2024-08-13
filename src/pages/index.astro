@@ -1,0 +1,155 @@
+---
+import Confirmation from '@/components/Confirmation.astro'
+import Countdown from '@/components/Countdown.astro'
+import Galeria from '@/components/Galeria.astro'
+import Hero from '@/components/Hero.astro'
+import Hotels from '@/components/Hotels.astro'
+import Invitation from '@/components/Invitation.astro'
+import Regalos from '@/components/Regalos.astro'
+import Requirements from '@/components/Requirements.astro'
+import Schedule from '@/components/Schedule.astro'
+import SimpleParallax from '@/components/SimpleParallax.astro'
+import SongButton from '@/components/SongButton.jsx'
+import Sponsors from '@/components/Sponsors.astro'
+import { prefix } from '@/constants'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title='XV Fernanda'>
+  <Hero
+    title='Fernanda'
+    description='¡Mis XV años!'
+    date='Sábado, 9 de Noviembre 2024'
+    image={`${prefix}/img/photo-1.webp`}
+  />
+
+  <Invitation
+    header='Será una noche mágica para mí y me encantaría que la disfrutes conmigo. Espero verte ahí.'
+    name='Nombre'
+    persons='# pases'
+    footer='¡Me hará muy feliz que me incorpores en este día tan especial!'
+  />
+
+  <Sponsors
+    message='Hace 15 años me regalaron la vida y a una gran familia, acompáñanos a festejar mi cumpleaños # XV.'
+    image={`${prefix}/img/flores.webp`}
+    groups={[
+      {
+        title: 'Mis papás',
+        persons: ['David Marco Alberto Monzalvo Vega', 'Monzerrat Lozano Jiménez']
+      },
+      {
+        title: 'Mis padrinos',
+        persons: ['Alicia Camarena Hernández', 'Luis Alfredo Medina Camarena']
+      }
+    ]}
+  />
+
+  <SimpleParallax image={`${prefix}/img/photo-2.webp`} />
+
+  <Schedule
+    title='Dónde y cuando'
+    description='La ceremonia y recepción se llevarán a cabo en la misma ubicación:'
+    date='Sábado, 9 de Noviembre 2024'
+    times={['Ceremonia: 7:00pm', 'Recepción: 8:00pm']}
+    location={{
+      name: 'Uro Eventos',
+      address: 'Carr Nacional kilometro 261, Quince de Mayo (Larralde), 64987 Monterrey, N.L.',
+      link: 'https://maps.app.goo.gl/yoYW3L3CCYPvHRS98'
+    }}
+  />
+
+  <Requirements
+    image={`${prefix}/img/flores.webp`}
+    title='Dress code'
+    code='Formal'
+    message='El color rosado es reservado para la fiesta de cumpleaños'
+    info={[
+      {
+        title: 'Hombres',
+        type: 'Traje',
+        image: `${prefix}/img/suit.webp`
+      },
+      {
+        title: 'Mujeres',
+        type: 'Vestido Largo',
+        image: `${prefix}/img/dress.webp`
+      }
+    ]}
+  />
+
+  <Galeria
+    title='Galería'
+    message='Después de grandes momentos, sólo quedan magníficos recuerdos.'
+    images={[
+      `${prefix}/img/photo-1.webp`,
+      `${prefix}/img/photo-2.webp`,
+      `${prefix}/img/photo-3.webp`,
+      `${prefix}/img/photo-4.webp`,
+      `${prefix}/img/photo-5.webp`,
+      `${prefix}/img/photo-6.webp`
+    ]}
+  />
+
+  <Regalos
+    image={`${prefix}/img/flores.webp`}
+    title='Mesa de regalos'
+    description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer en efectivo o depositándolo en un sobre.'
+  />
+
+  <Countdown image={`${prefix}/img/photo-3.webp`} />
+
+  <Hotels
+    title='Hospedaje'
+    description='Para una estadía más placentera te compartimos estas sugerencias de hospedaje.'
+    hotels={[
+      {
+        name: 'One',
+        phone: '+52 81 25 25 00 70',
+        address: 'Av. Eugenio Garza Sada 2408, Roma, 64700 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/heiNetDMC71a6v5x6'
+      },
+      {
+        name: 'Fiesta Inn',
+        phone: '+52 81 18 77 02 00',
+        address:
+          'Av. Eugenio Garza Sada 2411, Tecnológico, 64700 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/SEtAoHfuEkUucbr17'
+      },
+      {
+        name: 'Holiday Inn Express',
+        phone: '+52 81 83 29 60 00',
+        address:
+          'Av. Eugenio Garza Sada 3680-sur, Villa Los Pinos, 64770 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/ioEdRoErD2AbYNBk8'
+      },
+      {
+        name: 'Motel La Mansión',
+        phone: '+52 81 81 04 07 63',
+        address:
+          'Santiago-Monterrey 271, Villas La Rioja, 64984 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/Ai3B1mgtVYmVJKkq5'
+      },
+      {
+        name: 'Motel Dali',
+        phone: '+52 81 81 04 07 01',
+        address: 'Carr Nacional 1200, Las Diligencias, 64987 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/hdv1qyVT17YVzaHcA'
+      },
+      {
+        name: 'Kyoto Suites Motel',
+        phone: '+52 81 10 99 40 91',
+        address: 'Carr Nacional Km 266, Col. El Uro, 64986 Monterrey, N.L.',
+        link: 'https://maps.app.goo.gl/g9dLqWsJUZ7KfW3S6'
+      }
+    ]}
+  />
+
+  <Confirmation
+    image={`${prefix}/img/flores.webp`}
+    title='Confirmación'
+    description='Es muy importante para nosotros contar con tu confirmación lo antes posible.'
+  />
+
+  <SongButton client:only='react' />
+</Layout>

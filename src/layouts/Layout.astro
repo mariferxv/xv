@@ -1,0 +1,72 @@
+---
+import '@fontsource-variable/dancing-script'
+import '@fontsource-variable/quicksand'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Fernanda XV' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <title>{title}</title>
+    <style is:inline>
+      body {
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable both-edges;
+
+        &::-webkit-scrollbar {
+          --scrollbar-size: 7px;
+
+          width: var(--scrollbar-size);
+          height: var(--scrollbar-size);
+        }
+
+        &::-webkit-scrollbar-track {
+          background: color-mix(in srgb, var(--accent), var(--background) 50%);
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--accent);
+          border-radius: 3px;
+        }
+      }
+
+      @supports not selector(::-webkit-scrollbar) {
+        body {
+          scrollbar-color: var(--accent) var(--primary-color);
+        }
+      }
+
+      @layer base {
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class='bg-background text-white font-quicksand text-center'>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: theme('colors.accent');
+    --background: theme('colors.background');
+  }
+</style>
+
+<script src='@/utils/aos'></script>
+<script src='@/utils/parallax'></script>

@@ -1,0 +1,51 @@
+---
+import LinkButton from '@/components/LinkButton.astro'
+import SimpleParallax from '@/components/SimpleParallax.astro'
+import { prefix } from '@/constants'
+
+const { title, description, image } = Astro.props
+---
+
+<SimpleParallax image={image}>
+  <div class='px-8 py-20 flex flex-col justify-center items-center gap-10'>
+    <h2 data-aos='fade-up' class='font-dancing text-5xl text-accent'>
+      {title}
+    </h2>
+    <p class='text-balance'>{description}</p>
+    <div class='w-full grid grid-cols-1 xl:grid-cols-3 gap-8 place-items-center'>
+      <div class='size-full max-w-md flex flex-col gap-6 justify-center items-center p-10 bg-background/75 rounded'>
+        <img
+          src={`${prefix}/img/liverpool.webp`}
+          alt='Liverpool logo'
+          class='h-full max-h-12 w-auto'
+        />
+        <p>Evento: <span>51313478</span></p>
+        <LinkButton
+          text='Ver mesa'
+          link='https://www.liverpool.com.mx/'
+        />
+      </div>
+      <div class='size-full max-w-md flex flex-col gap-6 justify-center items-center p-10 bg-background/75 rounded'>
+        <img
+          src={`${prefix}/img/bbva.webp`}
+          alt='BBVA logo'
+          class='h-full max-h-10 w-auto'
+        />
+        <div class='space-y-2'>
+          <p>Isabella Mora Díaz</p>
+          <p>CLABE: <span>8454370453858363</span></p>
+          <p>Tarjeta: <span>4152 9841 6887 62349</span></p>
+        </div>
+      </div>
+      <div class='size-full max-w-md flex flex-col gap-6 justify-center items-center p-10 bg-background/75 rounded'>
+        <img
+          src={`${prefix}/img/envelope.webp`}
+          alt='Love Letter'
+          width='150'
+          height='150'
+        />
+        <p class='uppercase'>Lluvia de sobres</p>
+      </div>
+    </div>
+  </div>
+</SimpleParallax>
